@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'war'
+    id 'application'
+}
+
+// Define souce code compatibility
+sourceCompatibility =  14
+targetCompatibility =  14
+group 'cn.gov.pbc'
+version '1.0-SNAPSHOT'
+
+
+// Use maven repository
+repositories {
+    maven{
+        url 'http://localhost:8081/repository/maven-central/'
+    }
+    maven{
+        url 'https://maven.aliyun.com/repository/central/'
+    }
+}
+
+jar {
+    manifest {
+        attributes (
+                     'Main-Class': 'org.eclipse.jetty.demo.EmbedServer' ,
+                    'Implementation-Title': 'ocss' ,
+                    'Implementation-Version': '1.0'
+                    )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+dependencies {
+
+    implementation   'org.eclipse.jetty:jetty-server:+'
+    implementation  'javax.websocket:javax.websocket-api:+'
+    implementation  'org.eclipse.jetty.websocket:javax-websocket-server-impl:+'
+    implementation  'org.eclipse.jetty.websocket:javax-websocket-client-impl:+'
+    implementation  'org.thymeleaf:thymeleaf:+'
+    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+
+
+}
+mainClassName = 'org.eclipse.jetty.demo.EmbedServer'
+
+

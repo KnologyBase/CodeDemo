@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: org.eclipse.jetty.demo.EmbedServer
+Implementation-Title: ocss
+Implementation-Version: 1.0
+

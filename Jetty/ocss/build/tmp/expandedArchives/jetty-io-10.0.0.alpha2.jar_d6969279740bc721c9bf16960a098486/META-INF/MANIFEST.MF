@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk-Spec: 11
+Implementation-Vendor: Eclipse Jetty Project
+Implementation-Version: 10.0.0.alpha2
+url: http://www.eclipse.org/jetty
+Bnd-LastModified: 1584976766431
+Build-Jdk: 11.0.6
+Built-By: joakim
+Bundle-Classpath: .
+Bundle-Copyright: Copyright (c) 2008-2020 Mort Bay Consulting Pty Ltd an
+ d others.
+Bundle-Description: Jetty module for Jetty :: IO Utility
+Bundle-DocURL: http://www.eclipse.org/jetty
+Bundle-License: https://www.eclipse.org/legal/epl-2.0, https://www.apach
+ e.org/licenses/LICENSE-2.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jetty :: IO Utility
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-SymbolicName: org.eclipse.jetty.io
+Bundle-Vendor: Eclipse Jetty Project
+Bundle-Version: 10.0.0.alpha2
+Export-Package: org.eclipse.jetty.io;version="10.0.0";uses:="javax.net.s
+ sl,org.eclipse.jetty.util,org.eclipse.jetty.util.annotation,org.eclipse
+ .jetty.util.component,org.eclipse.jetty.util.ssl,org.eclipse.jetty.util
+ .thread,org.slf4j",org.eclipse.jetty.io.ssl;version="10.0.0";uses:="jav
+ ax.net.ssl,org.eclipse.jetty.io,org.eclipse.jetty.util.ssl"
+Import-Package: javax.net.ssl,org.eclipse.jetty.io;version="[10.0.0,11)"
+ ,org.eclipse.jetty.util;version="[10.0.0,11)",org.eclipse.jetty.util.an
+ notation;version="[10.0.0,11)",org.eclipse.jetty.util.component;version
+ ="[10.0.0,11)",org.eclipse.jetty.util.ssl;version="[10.0.0,11)",org.ecl
+ ipse.jetty.util.statistic;version="[10.0.0,11)",org.eclipse.jetty.util.
+ thread;version="[10.0.0,11)",org.eclipse.jetty.util.thread.strategy;ver
+ sion="[10.0.0,11)",org.slf4j;version="[2.0.0,3)"
+Originally-Created-By: Apache Maven Bundle Plugin
+Tool: Bnd-3.5.0.201709291849
+
