@@ -32,6 +32,7 @@ public interface IGTVGController {
             HttpServletRequest request, HttpServletResponse response,
             ServletContext servletContext, ITemplateEngine templateEngine)
             throws Exception;
-    
+
+	public String  getContentType(); 
     
 }

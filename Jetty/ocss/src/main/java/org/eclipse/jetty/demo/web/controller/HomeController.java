@@ -25,16 +25,24 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.context.WebContext;
 
 public class HomeController implements IGTVGController {
+ 
 
-    
+    private static Logger logger=LoggerFactory.getLogger(HomeController.class); 
     public HomeController() {
-        super();
-    }
-    
+        super();               
+         logger.info("HomeController Init............");    
+
+    } 
+    public String  getContentType(){ 
+    return "text/html;charset=UTF-8";}
     
     public void process(
             final HttpServletRequest request, final HttpServletResponse response,

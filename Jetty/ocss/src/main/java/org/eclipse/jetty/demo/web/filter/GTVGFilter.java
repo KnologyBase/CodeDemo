@@ -22,7 +22,7 @@ import org.thymeleaf.ITemplateEngine;
 public class GTVGFilter implements Filter {
 
 
-    private ServletContext servletContext;
+	private ServletContext servletContext;
     private GTVGApplication application;
 
 
@@ -72,11 +72,17 @@ public class GTVGFilter implements Filter {
         try {
 
             // This prevents triggering engine executions for resource URLs
-            if (request.getRequestURI().startsWith("/css") ||
-                    request.getRequestURI().startsWith("/images") ||
-                    request.getRequestURI().startsWith("/favicon")) {
-                return false;
-            }
+            // if (request.getRequestURI().startsWith("/css") ||
+            //         request.getRequestURI().startsWith("/images") ||
+            //         request.getRequestURI().startsWith("/favicon")) {
+
+
+
+
+
+
+            //     return false;
+            // }
 
 
             /*
@@ -86,6 +92,7 @@ public class GTVGFilter implements Filter {
              */
             IGTVGController controller = this.application.resolveControllerForRequest(request);
             if (controller == null) {
+                System.out.println("Control for ["+request.getRequestURI()+"] is null");
                 return false;
             }
 
@@ -97,11 +104,14 @@ public class GTVGFilter implements Filter {
             /*
              * Write the response headers
              */
-            response.setContentType("text/html;charset=UTF-8");
+            
+
+            // response.setContentType("text/html;charset=UTF-8");
+            response.setContentType(controller.getContentType());
+        //    
             response.setHeader("Pragma", "no-cache");
             response.setHeader("Cache-Control", "no-cache");
             response.setDateHeader("Expires", 0);
-
             /*
              * Execute the controller and process view template,
              * writing the results to the response writer.

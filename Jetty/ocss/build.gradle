@@ -14,9 +14,7 @@ version '1.0-SNAPSHOT'
 
 // Use maven repository
 repositories {
-    maven{
-        url 'http://localhost:8081/repository/maven-central/'
-    }
+
     maven{
         url 'https://maven.aliyun.com/repository/central/'
     }
@@ -31,21 +29,24 @@ jar {
                     )
     }
     from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it)} 
+    } 
+    from('src/main/webapp') { 
+         
     }
 }
 
 dependencies {
-
-    implementation   'org.eclipse.jetty:jetty-server:+'
+    implementation 'commons-io:commons-io:+'
+    implementation  'org.eclipse.jetty:jetty-server:+'
+    implementation  'org.eclipse.jetty:jetty-webapp:+'
     implementation  'javax.websocket:javax.websocket-api:+'
     implementation  'org.eclipse.jetty.websocket:javax-websocket-server-impl:+'
     implementation  'org.eclipse.jetty.websocket:javax-websocket-client-impl:+'
     implementation  'org.thymeleaf:thymeleaf:+'
-    implementation 'javax.servlet:javax.servlet-api:3.1.0'
-
-
+    implementation 'javax.servlet:javax.servlet-api:3.1.0' 
+    implementation 'org.slf4j:slf4j-jdk14:+'
+     
+ 
 }
 mainClassName = 'org.eclipse.jetty.demo.EmbedServer'
-
-

@@ -35,7 +35,10 @@ public class OrderDetailsController implements IGTVGController {
         super();
     }
     
-    
+
+    public String  getContentType(){ 
+        return "text/html;charset=UTF-8";}
+        
     public void process(
             final HttpServletRequest request, final HttpServletResponse response,
             final ServletContext servletContext, final ITemplateEngine templateEngine)

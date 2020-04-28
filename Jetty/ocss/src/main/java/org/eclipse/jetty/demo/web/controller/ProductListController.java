@@ -36,7 +36,10 @@ public class ProductListController implements IGTVGController {
     public ProductListController() {
         super();
     }
-    
+
+    public String  getContentType(){ 
+        return "text/html;charset=UTF-8";}
+        
     
     public void process(
             final HttpServletRequest request, final HttpServletResponse response,
